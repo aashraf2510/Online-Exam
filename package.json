@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build:lib && npm run build:app",
+    "build": "npm run build:lib && npm run serve:ssr:online-exam",
     "build:lib": "ng build auth-api",
-    "build:app": "ng build",
+    "build:app": "ng serve online-exam ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:online-exam": "node dist/online-exam/server/server.mjs"
