@@ -16,11 +16,12 @@ import { environment } from './environments/environments';
 import { provideStore } from '@ngrx/store';
 import { authReducer } from './store/auth.reducer';
 import { headersInterceptor } from './core/interceptors/headers.interceptor';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes, withHashLocation()),
+    provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch(), withInterceptors([headersInterceptor])),
     {
@@ -28,5 +29,6 @@ export const appConfig: ApplicationConfig = {
       useValue: environment.baseUrl,
     },
     provideStore({ auth: authReducer }),
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
 };
