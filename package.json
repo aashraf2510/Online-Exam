@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build auth-api && ng build",
+    "build": "ng build auth-api && ng build online-exam",
     "build:lib": "ng build auth-api",
     "build:app": "ng build online-exam",
     "watch": "ng build --watch --configuration development",
