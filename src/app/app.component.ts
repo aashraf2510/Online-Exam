@@ -1,7 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthLayoutComponent } from './core/layout/auth-layout/auth-layout.component';
-import { FlowbiteService } from './shared/services/flowbite/flowbite.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +7,6 @@ import { FlowbiteService } from './shared/services/flowbite/flowbite.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'online-exam';
-  _flowbiteService = inject(FlowbiteService);
-  ngOnInit(): void {
-    this._flowbiteService.loadFlowbite((flowbite) => {
-      // Your custom code here
-      console.log('Flowbite loaded', flowbite);
-    });
-  }
 }
