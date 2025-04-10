@@ -49,13 +49,13 @@ export const routes: Routes = [
             './features/pages/home/components/quiz-container/quiz-container.component'
           ).then((c) => c.QuizContainerComponent),
       },
-      {
-        path: 'exams/:id',
-        loadComponent: () =>
-          import(
-            './features/pages/home/components/exams-container/exams-container.component'
-          ).then((c) => c.ExamsContainerComponent),
-      },
+      // {
+      //   path: 'exams/:id',
+      //   loadComponent: () =>
+      //     import(
+      //       './features/pages/home/components/exams-container/exams-container.component'
+      //     ).then((c) => c.ExamsContainerComponent),
+      // },
     ],
     // loadComponent: () =>
     //   import('./features/pages/home/home.component').then(
