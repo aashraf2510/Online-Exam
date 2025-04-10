@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "npm run build:lib && npm run build:app",
     "build:lib": "ng build auth-api",
-    "build:app": "ng build online-exam",
+    "build:app": "ng serve online-exam",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:online-exam": "node dist/online-exam/server/server.mjs"
