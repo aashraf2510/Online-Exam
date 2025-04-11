@@ -56,14 +56,13 @@ app.use('/**', (req, res, next) => {
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
 
-  if (!process.env['PORT']) {
-    console.error('No port specified. Set the PORT environment variable.');
-    process.exit(1);
+  if (process.env['VERCEL']) {
+    console.error('No port specified.');
+  } else {
+    app.listen(port, () => {
+      console.log(`Node Express server listening on http://localhost:${port}`);
+    });
   }
-
-  app.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
-  });
 }
 
 /**
