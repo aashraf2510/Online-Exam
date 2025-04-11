@@ -56,15 +56,9 @@ app.use('/**', (req, res, next) => {
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
 
-  if (process.env['VERCEL']) {
-    // Vercel serverless functions do not support custom ports
-    console.log(process.env);
-    console.error('No port specified.');
-  } else {
-    app.listen(port, () => {
-      console.log(`Node Express server listening on http://localhost:${port}`);
-    });
-  }
+  app.listen(port, () => {
+    console.log(`Node Express server listening on http://localhost:${port}`);
+  });
 }
 
 /**
