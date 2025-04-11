@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && node dist/online-exam/server/server.mjs",
+    "build-dev": "ng build",
     "build:lib": "ng build auth-api",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "vercel-build": "ng build && node dist/online-exam/server/server.mjs",
     "serve:ssr:online-exam": "node dist/online-exam/server/server.mjs"
   },
   "private": true,
