@@ -5,14 +5,14 @@
       "use": "@vercel/node"
     },
     {
-      "src": "dist/browser/**/*",
+      "src": "dist/online-exam/browser/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/dist/server/main.js"
+      "dest": "/dist/online-exam/server/main.js"
     }
   ]
 }
