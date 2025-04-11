@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
-const app = express();
+export const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 /**
@@ -57,7 +57,6 @@ if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
 
   if (process.env['VERCEL']) {
-    // Vercel serverless function
     // Vercel serverless functions do not support custom ports
     console.log(process.env);
     console.error('No port specified.');
