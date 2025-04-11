@@ -8,7 +8,6 @@
     "build:lib": "ng build auth-api",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "__vercel__build__OLD": "ng build auth-api && ng build && node dist/online-exam/server/server.mjs",
     "vercel-build": "ng build auth-api && ng build",
     "serve:ssr:online-exam": "node dist/online-exam/server/server.mjs"
   },
