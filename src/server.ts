@@ -57,6 +57,9 @@ if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
 
   if (process.env['VERCEL']) {
+    // Vercel serverless function
+    // Vercel serverless functions do not support custom ports
+    console.log(process.env);
     console.error('No port specified.');
   } else {
     app.listen(port, () => {
