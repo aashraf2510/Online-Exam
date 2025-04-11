@@ -56,7 +56,7 @@ app.use('/**', (req, res, next) => {
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
 
-  if (!port) {
+  if (!process.env['PORT']) {
     console.error('No port specified. Set the PORT environment variable.');
     process.exit(1);
   }
